@@ -11,7 +11,7 @@
 @implementation NSRunningApplication (NJPossibleNames)
 
 - (NSArray *)windowTitles {
-    static CGWindowListOption s_OPTIONS = (kCGWindowListOptionOnScreenOnly
+    static uint32 s_OPTIONS = (kCGWindowListOptionOnScreenOnly
                                            | kCGWindowListExcludeDesktopElements);
     NSMutableArray *titles = [[NSMutableArray alloc] initWithCapacity:4];
     NSArray *windows = CFBridgingRelease(CGWindowListCopyWindowInfo(s_OPTIONS, kCGNullWindowID));
